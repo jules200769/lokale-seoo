@@ -67,11 +67,16 @@ De website is nu beschikbaar op `http://localhost:3000`
 
 ## Deployment
 
-Voor hosting op mijndomein.nl:
-1. Run `npm run build`
-2. Upload alle bestanden uit de `out/` folder naar je hosting
-3. Upload ook het `.htaccess` bestand (staat in `public/.htaccess`)
-4. Stel DNS records in bij mijndomein.nl
+Dit project wordt gehost via [Vercel](https://vercel.com).
+
+### Vercel Deployment
+
+1. Push je code naar de GitHub repository
+2. Verbind het project met Vercel via de GitHub integratie
+3. Configureer environment variables in Vercel:
+   - `VITE_SUPABASE_URL`
+   - `VITE_SUPABASE_ANON_KEY`
+4. Vercel zal automatisch deploien bij elke push naar de main branch
 
 ## Database Setup
 
