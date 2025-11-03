@@ -23,8 +23,8 @@ React website voor lokale SEO en Google Maps optimalisatie diensten.
 
 1. Clone het repository:
 ```bash
-git clone https://github.com/jules200769/lokale-seo.git
-cd lokale-seo
+git clone https://github.com/jules200769/lokale-seoo.git
+cd lokale-seoo
 ```
 
 2. Installeer dependencies:
