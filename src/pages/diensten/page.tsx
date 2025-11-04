@@ -1,11 +1,9 @@
 
-import { useState } from 'react';
 import Header from '../../components/feature/Header';
 import Footer from '../../components/feature/Footer';
 import { Link } from 'react-router-dom';
 
 const DienstenPage = () => {
-  const [selectedPackage, setSelectedPackage] = useState(1);
 
   const packages = [
     {
@@ -52,6 +50,65 @@ const DienstenPage = () => {
         "2 SEO-landingspagina's (per locatie)",
         "Concurrentieanalyse"
       ],
+      popular: false,
+      color: "purple"
+    }
+  ];
+
+  const websitePackages = [
+    {
+      name: "Start Website",
+      target: "Voor ondernemers die eindelijk online zichtbaar willen zijn zonder ingewikkelde rommel.",
+      description: "Een snelle, overzichtelijke website die vertrouwen wekt en klanten naar je toetrekt. Ideaal voor wie net begint en meteen professioneel wil overkomen.",
+      oneTimePrice: "€495",
+      startPrice: "€595",
+      monthlyPrice: "€120",
+      discount: "14%",
+      features: [
+        "Inclusief alle inbegrepen met het StartPakket als bundel:",
+        "1 tot 3 pagina's (Home, Diensten, Contact)",
+        "Mobielvriendelijk ontwerp",
+        "Google Business-profiel koppeling",
+        "SSL-beveiliging & contactformulier"
+      ],
+      perfectFor: "Perfect voor: zzp'ers, lokale winkels en kleine dienstverleners die hun eerste online klanten willen aantrekken.",
+      popular: false,
+      color: "blue"
+    },
+    {
+      name: "Groei Website",
+      target: "Voor bedrijven die hun lokale markt willen veroveren.",
+      description: "Je krijgt een sterkere website die niet alleen mooi oogt, maar ook beter gevonden wordt. Gericht op groei, herkenbaarheid en vertrouwen.",
+      oneTimePrice: "€895",
+      startPrice: "€1.015",
+      monthlyPrice: "€185",
+      discount: "15%",
+      features: [
+        "Inclusief alle inbegrepen met het GroeiPakket als bundel:",
+        "4 tot 6 pagina's (Home, Diensten, Over ons, Contact, Reviews, Blogoptie)",
+        "Volledige lokale SEO-optimalisatie",
+        "Snellere laadtijd en betere gebruikerservaring"
+      ],
+      perfectFor: "Perfect voor: groeiende bedrijven die meer aanvragen en zichtbaarheid willen in hun regio.",
+      popular: false,
+      color: "orange"
+    },
+    {
+      name: "Pro Website",
+      target: "Voor bedrijven die de lokale markt willen domineren en hun concurrenten willen verpulveren.",
+      description: "Een op maat gemaakte website die is gebouwd op strategie, conversie en constante verbetering.",
+      oneTimePrice: "€1.495",
+      startPrice: "€1.645",
+      monthlyPrice: "€275",
+      discount: "15%",
+      features: [
+        "Inclusief alle inbegrepen met het ProPakket als bundel wordt gekocht:",
+        "7+ pagina's (volledig maatwerk, inclusief landingspagina's en blogsectie)",
+        "Geavanceerde SEO + maandelijkse optimalisatie",
+        "Snelheid- en beveiligingsoptimalisatie",
+        "Integratie met advertenties of externe tools"
+      ],
+      perfectFor: "Perfect voor: gevestigde bedrijven die een serieuze online autoriteit willen worden.",
       popular: false,
       color: "purple"
     }
@@ -152,8 +209,82 @@ const DienstenPage = () => {
         </div>
       </section>
 
-      {/* Process Section */}
+      {/* Website Packages Section */}
       <section className="py-20" style={{ backgroundColor: '#f8f8f8' }}>
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-black mb-4">
+              Onze <span style={{ color: '#dcc8c2' }}>Website</span> Pakketten
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Combineer een professionele website met lokale SEO voor maximale zichtbaarheid en resultaten
+            </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {websitePackages.map((pkg, index) => (
+              <div
+                key={index}
+                className={`relative bg-white rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl h-full flex flex-col border border-gray-200 shadow-sm`}
+              >
+                {pkg.discount && (
+                  <div className="text-center py-2 text-white font-semibold text-sm" style={{ backgroundColor: '#dcc8c2', color: '#000000' }}>
+                    {pkg.discount} KORTING
+                  </div>
+                )}
+                <div className="p-8 flex flex-col h-full">
+                  <div className="text-center mb-8">
+                    <h3 className="text-2xl font-bold text-black mb-2">{pkg.name}</h3>
+                    <p className="text-gray-600 text-sm mb-3 font-semibold">{pkg.target}</p>
+                    <p className="text-gray-600 text-sm mb-6">{pkg.description}</p>
+                    
+                    <div className="mb-6">
+                      <div className="text-sm text-gray-500 mb-1">Eenmalig</div>
+                      <div className="text-3xl font-bold text-black mb-2">
+                        {pkg.oneTimePrice}
+                      </div>
+                      <div className="text-sm text-gray-500 mb-1">of</div>
+                      <div className="text-lg font-semibold text-black mb-1">
+                        {pkg.startPrice} start
+                      </div>
+                      <div className="text-lg text-gray-600">
+                        <span className="font-semibold">{pkg.monthlyPrice}</span> per maand (bundel)
+                      </div>
+                    </div>
+                  </div>
+
+                  <ul className="space-y-4 mb-6 flex-grow">
+                    {pkg.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-start space-x-3">
+                        <div className="w-5 h-5 flex items-center justify-center rounded-full mt-0.5" style={{ backgroundColor: '#dcc8c2' }}>
+                          <i className="ri-check-line text-black text-sm"></i>
+                        </div>
+                        <span className="text-gray-700 text-sm leading-relaxed">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mb-6">
+                    <p className="text-gray-600 text-sm italic">{pkg.perfectFor}</p>
+                  </div>
+
+                  <div className="mt-auto">
+                    <Link 
+                      to="/contact" 
+                      className="block w-full py-3 px-6 rounded-lg font-semibold transition-all whitespace-nowrap text-center bg-black text-white hover:bg-gray-800"
+                    >
+                      Pakket kiezen
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-black mb-4">

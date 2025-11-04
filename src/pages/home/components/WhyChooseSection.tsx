@@ -6,22 +6,22 @@ const WhyChooseSection = () => {
     {
       icon: 'ri-map-pin-2-fill',
       title: 'Lokale expertise',
-      description: 'Wij kennen de Tilburgse markt en weten hoe lokale SEO werkt in de regio'
+      description: 'Wij kennen de <strong>Tilburgse markt</strong> en weten hoe <strong>lokale SEO</strong> werkt in de regio'
     },
     {
       icon: 'ri-line-chart-fill',
       title: 'Data-gedreven aanpak',
-      description: 'Alle strategieën zijn gebaseerd op concrete data en meetbare resultaten'
+      description: 'Alle strategieën zijn gebaseerd op <strong>concrete data</strong> en <strong>meetbare resultaten</strong>'
     },
     {
       icon: 'ri-team-fill',
       title: 'Persoonlijke begeleiding',
-      description: 'Direct contact met ons team, geen tussenpersonen of callcenters'
+      description: '<em>Direct contact</em> met ons team, <em>geen tussenpersonen of callcenters</em>'
     },
     {
-      icon: 'ri-trophy-fill',
-      title: 'Bewezen resultaten',
-      description: 'Succesvolle track record met lokale bedrijven in Tilburg en omgeving'
+      icon: 'ri-focus-3-fill',
+      title: 'Toegewijd aan uw succes',
+      description: '<strong>Resultaatgerichte aanpak</strong> met duidelijke doelen voor uw <strong>lokale zichtbaarheid</strong>'
     }
   ];
 
@@ -35,8 +35,8 @@ const WhyChooseSection = () => {
               <span style={{ color: '#dcc8c2' }}>Lokale SEO?</span>
             </h2>
             <p className="text-lg text-gray-600 mb-8">
-              Als lokaal SEO-bureau in Tilburg begrijpen wij de uitdagingen van lokale ondernemers. 
-              Wij combineren technische expertise met lokale marktkennis om uw bedrijf beter vindbaar te maken.
+              Als <strong>lokaal SEO-bureau</strong> in <strong>Tilburg</strong> begrijpen wij de uitdagingen van <strong>lokale ondernemers</strong>. 
+              Wij combineren <em>technische expertise</em> met <strong>lokale marktkennis</strong> om uw bedrijf beter vindbaar te maken.
             </p>
             
             <div className="space-y-6">
@@ -49,8 +49,7 @@ const WhyChooseSection = () => {
                     <h3 className="text-lg font-semibold text-black mb-1">
                       {benefit.title}
                     </h3>
-                    <p className="text-gray-600">
-                      {benefit.description}
+                    <p className="text-gray-600" dangerouslySetInnerHTML={{ __html: benefit.description }}>
                     </p>
                   </div>
                 </div>

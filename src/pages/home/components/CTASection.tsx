@@ -11,11 +11,11 @@ const CTASection = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-          Klaar om beter gevonden te worden in Tilburg?
+          Klaar om beter gevonden te worden in <strong>Tilburg</strong>?
         </h2>
         <p className="text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
-          Start vandaag nog met het verbeteren van uw lokale zichtbaarheid. 
-          Ontvang een gratis SEO-analyse van uw huidige positie en ontdek de mogelijkheden.
+          Start vandaag nog met het verbeteren van uw <strong>lokale zichtbaarheid</strong>. 
+          Ontvang een <strong>gratis SEO-analyse</strong> van uw huidige positie en ontdek de mogelijkheden.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link

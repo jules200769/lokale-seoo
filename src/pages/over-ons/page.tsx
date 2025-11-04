@@ -16,8 +16,8 @@ const OverOnsPage = () => {
               Over <span style={{ color: '#dcc8c2' }}>Lokale SEO & Maps</span> Optimalisatie 013
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              Wij zijn gespecialiseerd in het helpen van lokale ondernemers in Tilburg en omgeving 
-              om beter gevonden te worden in Google Maps en lokale zoekresultaten.
+              Wij zijn gespecialiseerd in het helpen van <strong>lokale ondernemers</strong> in <strong>Tilburg en omgeving</strong> 
+              om beter gevonden te worden in <strong>Google Maps</strong> en <em>lokale zoekresultaten</em>.
             </p>
           </div>
         </div>
@@ -32,14 +32,14 @@ const OverOnsPage = () => {
                 Onze <span style={{ color: '#dcc8c2' }}>Missie</span>
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                Lokale ondernemers verdienen het om gevonden te worden door hun ideale klanten. 
-                Wij geloven dat elke lokale business de kans moet krijgen om te groeien door 
-                optimale online zichtbaarheid.
+                <strong>Lokale ondernemers</strong> verdienen het om gevonden te worden door hun <em>ideale klanten</em>. 
+                Wij geloven dat elke <strong>lokale business</strong> de kans moet krijgen om te groeien door 
+                optimale <strong>online zichtbaarheid</strong>.
               </p>
               <p className="text-lg text-gray-600 mb-8">
-                Met onze expertise in lokale SEO en Google Business Profile optimalisatie 
-                zorgen wij ervoor dat uw bedrijf prominent verschijnt wanneer potentiële 
-                klanten in Tilburg en omgeving naar uw diensten zoeken.
+                Met onze expertise in <strong>lokale SEO</strong> en <strong>Google Business Profile</strong> optimalisatie 
+                zorgen wij ervoor dat uw bedrijf <em>prominent verschijnt</em> wanneer potentiële 
+                klanten in <strong>Tilburg en omgeving</strong> naar uw diensten zoeken.
               </p>
             </div>
             <div className="relative">
@@ -72,10 +72,10 @@ const OverOnsPage = () => {
                 <i className="ri-user-line text-4xl text-black"></i>
               </div>
               <h3 className="text-2xl font-bold text-black mb-2">Mikail van Engelen</h3>
-              <p className="font-semibold mb-4" style={{ color: '#dcc8c2' }}>Content & Klantrelaties Specialist</p>
+              <p className="font-semibold mb-4" style={{ color: '#dcc8c2' }}><strong>Content & Klantrelaties Specialist</strong></p>
               <p className="text-gray-600 mb-6">
-                Verantwoordelijk voor content strategie, klantcommunicatie en het ontwikkelen 
-                van effectieve lokale SEO campagnes. Zorgt ervoor dat elke klant de persoonlijke 
+                Verantwoordelijk voor <em>content strategie</em>, <em>klantcommunicatie</em> en het ontwikkelen 
+                van effectieve <strong>lokale SEO campagnes</strong>. Zorgt ervoor dat elke klant de persoonlijke 
                 aandacht krijgt die ze verdienen.
               </p>
               <div className="flex justify-center space-x-4">
@@ -90,11 +90,11 @@ const OverOnsPage = () => {
                 <i className="ri-code-line text-4xl text-black"></i>
               </div>
               <h3 className="text-2xl font-bold text-black mb-2">Jules Roelen</h3>
-              <p className="font-semibold mb-4" style={{ color: '#dcc8c2' }}>Techniek & Automatisering Specialist</p>
+              <p className="font-semibold mb-4" style={{ color: '#dcc8c2' }}><strong>Techniek & Automatisering Specialist</strong></p>
               <p className="text-gray-600 mb-6">
-                Focust op de technische aspecten van SEO, automatisering van processen en 
+                Focust op de <em>technische aspecten</em> van SEO, automatisering van processen en 
                 het implementeren van geavanceerde tracking en analytics systemen voor 
-                meetbare resultaten.
+                <strong>meetbare resultaten</strong>.
               </p>
               <div className="flex justify-center space-x-4">
                 <div className="px-3 py-1 rounded-full text-sm text-black border border-gray-300">Technische SEO</div>
@@ -123,7 +123,7 @@ const OverOnsPage = () => {
                 <i className="ri-trophy-line text-2xl text-black"></i>
               </div>
               <h3 className="text-xl font-semibold text-black mb-4">Resultaatgericht</h3>
-              <p className="text-gray-600">Wij werken alleen met meetbare doelen en zorgen voor concrete resultaten die uw business vooruithelpen.</p>
+              <p className="text-gray-600">Wij werken alleen met <strong>meetbare doelen</strong> en zorgen voor <strong>concrete resultaten</strong> die uw business vooruithelpen.</p>
             </div>
 
             <div className="text-center">
@@ -131,7 +131,7 @@ const OverOnsPage = () => {
                 <i className="ri-line-chart-line text-2xl text-black"></i>
               </div>
               <h3 className="text-xl font-semibold text-black mb-4">Data-gedreven</h3>
-              <p className="text-gray-600">Alle beslissingen worden ondersteund door data en analytics. Geen giswerk, alleen bewezen strategieën.</p>
+              <p className="text-gray-600">Alle beslissingen worden ondersteund door <strong>data en analytics</strong>. Geen giswerk, alleen <em>bewezen strategieën</em>.</p>
             </div>
 
             <div className="text-center">
@@ -139,7 +139,7 @@ const OverOnsPage = () => {
                 <i className="ri-map-pin-line text-2xl text-black"></i>
               </div>
               <h3 className="text-xl font-semibold text-black mb-4">Lokale betrokkenheid</h3>
-              <p className="text-gray-600">Als Tilburgers kennen wij de lokale markt en begrijpen wij wat lokale ondernemers nodig hebben.</p>
+              <p className="text-gray-600">Als <strong>Tilburgers</strong> kennen wij de <strong>lokale markt</strong> en begrijpen wij wat lokale ondernemers nodig hebben.</p>
             </div>
 
             <div className="text-center">
@@ -147,7 +147,7 @@ const OverOnsPage = () => {
                 <i className="ri-eye-line text-2xl text-black"></i>
               </div>
               <h3 className="text-xl font-semibold text-black mb-4">Transparantie</h3>
-              <p className="text-gray-600">Volledige transparantie in onze werkwijze, prijzen en resultaten. U weet altijd waar u aan toe bent.</p>
+              <p className="text-gray-600"><strong>Volledige transparantie</strong> in onze werkwijze, prijzen en resultaten. U weet altijd waar u aan toe bent.</p>
             </div>
 
             <div className="text-center">
@@ -155,7 +155,7 @@ const OverOnsPage = () => {
                 <i className="ri-user-heart-line text-2xl text-black"></i>
               </div>
               <h3 className="text-xl font-semibold text-black mb-4">Persoonlijke aanpak</h3>
-              <p className="text-gray-600">Elke klant is uniek. Wij ontwikkelen maatwerk strategieën die perfect aansluiten bij uw bedrijf.</p>
+              <p className="text-gray-600">Elke klant is uniek. Wij ontwikkelen <strong>maatwerk strategieën</strong> die perfect aansluiten bij uw bedrijf.</p>
             </div>
 
             <div className="text-center">
@@ -163,7 +163,7 @@ const OverOnsPage = () => {
                 <i className="ri-arrow-up-line text-2xl text-black"></i>
               </div>
               <h3 className="text-xl font-semibold text-black mb-4">Continue verbetering</h3>
-              <p className="text-gray-600">De digitale wereld verandert snel. Wij blijven leren en verbeteren om voorop te blijven lopen.</p>
+              <p className="text-gray-600">De digitale wereld verandert snel. Wij blijven leren en verbeteren om <em>voorop te blijven lopen</em>.</p>
             </div>
           </div>
         </div>
@@ -186,18 +186,18 @@ const OverOnsPage = () => {
               {[
                 {
                   title: "Mikail van Engelen: Content & Klanten",
-                  description: "Focust op het ontwikkelen van effectieve content strategieën, het onderhouden van klantrelaties en het creëren van overtuigende lokale SEO campagnes die resoneren met uw doelgroep.",
+                  description: "Focust op het ontwikkelen van <strong>effectieve content strategieën</strong>, het onderhouden van klantrelaties en het creëren van overtuigende <strong>lokale SEO campagnes</strong> die resoneren met uw doelgroep.",
                   features: ["Content strategie ontwikkeling", "Klantcommunicatie en support", "Lokale keyword research", "Review management strategieën"]
                 },
                 {
                   title: "Jules Roelen: Techniek & Automatisering",
-                  description: "Zorgt voor de technische implementatie, automatisering van processen en het opzetten van geavanceerde tracking systemen voor meetbare resultaten en continue optimalisatie.",
+                  description: "Zorgt voor de <em>technische implementatie</em>, automatisering van processen en het opzetten van geavanceerde tracking systemen voor <strong>meetbare resultaten</strong> en <em>continue optimalisatie</em>.",
                   features: ["Technische SEO implementatie", "Analytics en tracking setup", "Automatisering van processen", "Performance monitoring"]
                 }
               ].map((approach, index) => (
                 <div key={index} className="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
                   <h3 className="text-2xl font-bold text-black mb-4">{approach.title}</h3>
-                  <p className="text-gray-600 mb-6">{approach.description}</p>
+                  <p className="text-gray-600 mb-6" dangerouslySetInnerHTML={{ __html: approach.description }}></p>
                   <div className="grid md:grid-cols-2 gap-4">
                     {approach.features.map((feature, featureIndex) => (
                       <div key={featureIndex} className="flex items-center space-x-3">
@@ -231,8 +231,8 @@ const OverOnsPage = () => {
             Klaar om samen te werken?
           </h2>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Laten wij u helpen om beter gevonden te worden in Tilburg en omgeving. 
-            Plan een gratis kennismakingsgesprek en ontdek wat wij voor u kunnen betekenen.
+            Laten wij u helpen om beter gevonden te worden in <strong>Tilburg en omgeving</strong>. 
+            Plan een <strong>gratis kennismakingsgesprek</strong> en ontdek wat wij voor u kunnen betekenen.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

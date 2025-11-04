@@ -5,8 +5,9 @@ CREATE TABLE contact_submissions (
   email VARCHAR(255) NOT NULL,
   phone VARCHAR(50),
   company VARCHAR(255),
-  message TEXT NOT NULL,
+  message TEXT,
   service VARCHAR(100),
+  website_package VARCHAR(100),
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
   status VARCHAR(20) DEFAULT 'new' CHECK (status IN ('new', 'contacted', 'closed'))
 );

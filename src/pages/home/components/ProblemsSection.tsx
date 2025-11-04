@@ -4,32 +4,32 @@ const ProblemsSection = () => {
     {
       icon: 'ri-search-line',
       title: 'Slecht vindbaar in Google',
-      description: 'Uw bedrijf staat niet op de eerste pagina van Google zoekresultaten'
+      description: 'Uw bedrijf staat niet op de <em>eerste pagina</em> van <strong>Google zoekresultaten</strong>'
     },
     {
       icon: 'ri-map-pin-line',
       title: 'Geen zichtbaarheid in Google Maps',
-      description: 'Lokale klanten kunnen uw bedrijf niet vinden via Google Maps'
+      description: '<em>Lokale klanten</em> kunnen uw bedrijf niet vinden via <strong>Google Maps</strong>'
     },
     {
       icon: 'ri-star-line',
       title: 'Weinig of geen reviews',
-      description: 'Gebrek aan positieve reviews schaadt uw online reputatie'
+      description: 'Gebrek aan positieve <strong>reviews</strong> schaadt uw <em>online reputatie</em>'
     },
     {
       icon: 'ri-line-chart-line',
       title: 'Geen duidelijke SEO-strategie',
-      description: 'U weet niet hoe u uw online zichtbaarheid kunt verbeteren'
+      description: 'U weet niet hoe u uw <strong>online zichtbaarheid</strong> kunt verbeteren zonder een <strong>SEO-strategie</strong>'
     },
     {
       icon: 'ri-links-line',
       title: 'Zwakke backlink-profiel',
-      description: 'Onvoldoende kwalitatieve backlinks naar uw website'
+      description: 'Onvoldoende <em>kwalitatieve <strong>backlinks</strong></em> naar uw website'
     },
     {
       icon: 'ri-file-text-line',
       title: 'Gebrek aan lokale content',
-      description: 'Uw website is niet geoptimaliseerd voor lokale zoektermen'
+      description: 'Uw website is niet <em>geoptimaliseerd</em> voor <strong>lokale zoektermen</strong>'
     }
   ];
 
@@ -42,8 +42,8 @@ const ProblemsSection = () => {
             <span style={{ color: '#dcc8c2' }}>SEO problemen?</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Is uw bedrijf niet goed vindbaar in Google? Met techniek, content en linkbuilding zorgen wij ervoor 
-            dat uw bedrijf op relevante zoektermen zichtbaar is in Google.
+            Is uw bedrijf niet goed vindbaar in <strong>Google</strong>? Met <strong>techniek, content en linkbuilding</strong> zorgen wij ervoor 
+            dat uw bedrijf op relevante zoektermen zichtbaar is in <strong>Google</strong>.
           </p>
         </div>
 
@@ -56,8 +56,7 @@ const ProblemsSection = () => {
               <h3 className="text-lg font-semibold text-black mb-2">
                 {problem.title}
               </h3>
-              <p className="text-gray-600">
-                {problem.description}
+              <p className="text-gray-600" dangerouslySetInnerHTML={{ __html: problem.description }}>
               </p>
             </div>
           ))}

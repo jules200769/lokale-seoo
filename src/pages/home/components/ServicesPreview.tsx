@@ -7,19 +7,19 @@ const ServicesPreview = () => {
       icon: 'ri-google-fill',
       title: 'Google Business Profile',
       description: 'Optimalisatie van uw Google Bedrijfsprofiel voor maximale lokale zichtbaarheid',
-      features: ['Profiel optimalisatie', 'Foto\'s en content', 'Review management']
+      features: ['<strong>Profiel optimalisatie</strong>', '<strong>Foto\'s en content</strong>', '<strong>Review management</strong>']
     },
     {
       icon: 'ri-map-pin-line',
       title: 'Lokale SEO',
       description: 'On-page optimalisatie en landingspagina\'s specifiek voor uw locatie',
-      features: ['Zoekwoord onderzoek', 'Content optimalisatie', 'Technische SEO']
+      features: ['<strong>Zoekwoord onderzoek</strong>', '<strong>Content optimalisatie</strong>', '<strong>Technische SEO</strong>']
     },
     {
       icon: 'ri-links-fill',
       title: 'Citaties & Backlinks',
       description: 'Opbouw van sterke online autoriteit door kwalitatieve vermeldingen',
-      features: ['Lokale directories', 'Branche-specifieke sites', 'Kwaliteitscontrole']
+      features: ['<strong>Lokale directories</strong>', '<strong>Branche-specifieke sites</strong>', '<strong>Kwaliteitscontrole</strong>']
     }
   ];
 
@@ -51,9 +51,7 @@ const ServicesPreview = () => {
               </p>
               <ul className="space-y-2">
                 {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-center text-gray-600">
-                    <i className="ri-check-line mr-2" style={{ color: '#dcc8c2' }}></i>
-                    {feature}
+                  <li key={featureIndex} className="flex items-center text-gray-600" dangerouslySetInnerHTML={{ __html: `<i class="ri-check-line mr-2" style="color: #dcc8c2;"></i>${feature}` }}>
                   </li>
                 ))}
               </ul>

@@ -11,11 +11,15 @@ const ContactPage = () => {
     phone: '',
     company: '',
     message: '',
-    service: ''
+    service: '',
+    websitePackage: ''
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'idle' | 'success' | 'error';
+    message?: string;
+  }>({ type: 'idle' });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -23,25 +27,61 @@ const ContactPage = () => {
       ...prev,
       [name]: value
     }));
+    // Reset error status when user starts typing
+    if (submitStatus.type === 'error') {
+      setSubmitStatus({ type: 'idle' });
+    }
+  };
+
+  // Email validation regex
+  const validateEmail = (email: string): boolean => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  // Form validation function
+  const validateForm = (): string[] => {
+    const errors: string[] = [];
+
+    // Validate name
+    if (!formData.name.trim()) {
+      errors.push('Naam is verplicht');
+    }
+
+    // Validate email
+    if (!formData.email.trim()) {
+      errors.push('E-mailadres is verplicht');
+    } else if (!validateEmail(formData.email.trim())) {
+      errors.push('E-mailadres is ongeldig. Controleer het formaat.');
+    }
+
+    // Validate message length
+    if (formData.message.length > 500) {
+      errors.push('Bericht is te lang (maximaal 500 karakters toegestaan)');
+    }
+
+    return errors;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Validate required fields
-    if (!formData.name.trim() || !formData.email.trim()) {
-      setSubmitStatus('error');
-      return;
-    }
-
-    // Validate textarea character limit
-    if (formData.message.length > 500) {
-      setSubmitStatus('error');
+    // Validate form
+    const validationErrors = validateForm();
+    if (validationErrors.length > 0) {
+      // Show first error or combine multiple errors
+      const errorMessage = validationErrors.length === 1 
+        ? validationErrors[0]
+        : validationErrors.join(' • ');
+      setSubmitStatus({ 
+        type: 'error', 
+        message: errorMessage 
+      });
       return;
     }
 
     setIsSubmitting(true);
-    setSubmitStatus('idle');
+    setSubmitStatus({ type: 'idle' });
 
     try {
       // Insert data into Supabase
@@ -54,27 +94,46 @@ const ContactPage = () => {
             phone: formData.phone,
             company: formData.company,
             message: formData.message,
-            service: formData.service
+            service: formData.service,
+            website_package: formData.websitePackage || null
           }
         ]);
 
       if (error) {
         console.error('Supabase error:', error);
-        setSubmitStatus('error');
+        console.error('Error details:', {
+          message: error.message,
+          details: error.details,
+          hint: error.hint,
+          code: error.code
+        });
+        // Toon specifieke foutmelding als beschikbaar, anders generieke melding
+        const errorMessage = error.message || 'Er is een technische fout opgetreden. Probeer het later opnieuw.';
+        setSubmitStatus({ 
+          type: 'error', 
+          message: errorMessage 
+        });
       } else {
-        setSubmitStatus('success');
+        setSubmitStatus({ type: 'success' });
         setFormData({
           name: '',
           email: '',
           phone: '',
           company: '',
           message: '',
-          service: ''
+          service: '',
+          websitePackage: ''
         });
       }
     } catch (error) {
       console.error('Form submission error:', error);
-      setSubmitStatus('error');
+      const errorMessage = error instanceof Error 
+        ? error.message 
+        : 'Er is een technische fout opgetreden. Probeer het later opnieuw.';
+      setSubmitStatus({ 
+        type: 'error', 
+        message: errorMessage 
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -216,6 +275,29 @@ const ContactPage = () => {
                 </div>
 
                 <div>
+                  <label htmlFor="websitePackage" className="block text-sm font-semibold text-black mb-2">
+                    Kies een website pakket <span className="text-gray-500 font-normal">(optioneel)</span>
+                  </label>
+                  <div className="relative">
+                    <select
+                      id="websitePackage"
+                      name="websitePackage"
+                      value={formData.websitePackage}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent text-sm appearance-none pr-8"
+                    >
+                      <option value="">Selecteer een website pakket (optioneel)</option>
+                      <option value="start-website">Start Website (€495 eenmalig / €595 start + €120/maand bundel)</option>
+                      <option value="groei-website">Groei Website (€895 eenmalig / €1.015 start + €185/maand bundel)</option>
+                      <option value="pro-website">Pro Website (€1.495 eenmalig / €1.645 start + €275/maand bundel)</option>
+                    </select>
+                    <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                      <i className="ri-arrow-down-s-line text-gray-400"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
                   <label htmlFor="message" className="block text-sm font-semibold text-black mb-2">
                     Bericht
                   </label>
@@ -235,7 +317,7 @@ const ContactPage = () => {
                 </div>
 
                 {/* Status Messages */}
-                {submitStatus === 'success' && (
+                {submitStatus.type === 'success' && (
                   <div className="rounded-lg p-4 border" style={{ backgroundColor: '#dcc8c2', borderColor: '#c9b3ab' }}>
                     <div className="flex items-center">
                       <i className="ri-check-circle-line text-black mr-2"></i>
@@ -246,13 +328,15 @@ const ContactPage = () => {
                   </div>
                 )}
 
-                {submitStatus === 'error' && (
+                {submitStatus.type === 'error' && submitStatus.message && (
                   <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-                    <div className="flex items-center">
-                      <i className="ri-error-warning-line text-red-600 mr-2"></i>
-                      <p className="text-red-800 font-medium">
-                        Er is een fout opgetreden bij het verzenden. Controleer uw gegevens en probeer opnieuw.
-                      </p>
+                    <div className="flex items-start">
+                      <i className="ri-error-warning-line text-red-600 mr-2 mt-0.5"></i>
+                      <div className="flex-1">
+                        <p className="text-red-800 font-medium">
+                          {submitStatus.message}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 )}

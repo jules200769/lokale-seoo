@@ -17,8 +17,8 @@ const HeroSection = () => {
               <span style={{ color: '#dcc8c2' }}>Tilburg & omgeving</span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-gray-100">
-              Wij helpen lokale ondernemers zichtbaar te worden in Google Maps en lokale zoekresultaten. 
-              Data-gedreven SEO strategieën die écht resultaat opleveren.
+              Wij helpen <strong>lokale ondernemers</strong> zichtbaar te worden in <strong>Google Maps</strong> en <em>lokale zoekresultaten</em>. 
+              <strong>Data-gedreven SEO strategieën</strong> die écht <em>resultaat opleveren</em>.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
