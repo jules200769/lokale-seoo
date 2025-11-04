@@ -41,6 +41,15 @@ en dit project volgt [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - CHANGELOG.md bestand aangemaakt voor het bijhouden van alle wijzigingen
 
 ### Gewijzigd
+- **Dienstenpagina pakket prijsweergave verbeterd** ✅
+  - Start pakket: "(optioneel) €95 per maand" - alleen prijsbedrag is nu vet en schuin
+  - Groei pakket: "vervolgens €145 per maand" - tekst aangepast van "per maand daarna" naar "vervolgens", alleen prijsbedrag is nu vet en schuin
+  - Pro pakket: "vervolgens €225 per maand" - tekst aangepast van "per maand daarna" naar "vervolgens", alleen prijsbedrag is nu vet en schuin
+  - Prijsbedragen worden nu benadrukt met `font-bold italic` voor betere zichtbaarheid
+  - Website pakketten: "€595 start" / "€1015 start" / "€1645 start" aangepast naar "Eerste maand €595" / "Eerste maand €1015" / "Eerste maand €1645" (woord "start" verwijderd)
+  - Website pakketten maandprijs: "€195 per maand (bundel)" / "€345 per maand (bundel)" / "€525 per maand (bundel)" aangepast naar "vervolgens €195 per maand" / "vervolgens €345 per maand" / "vervolgens €525 per maand" - alleen prijsbedragen zijn nu vet en schuin, "(bundel)" verwijderd
+  - Website pakketten layout: prijssectie uitgelijnd op dezelfde hoogte voor alle 3 pakketten - min-height toegevoegd aan header sectie zodat prijzen consistent gepositioneerd zijn
+  - Start Website pakket prijssectie: kleine aanpassing om prijzen beter uit te lijnen met andere pakketten (negatieve margin-top toegevoegd voor betere positionering)
 - **Over-ons pagina typografie verbeterd** ✅
   - Hero Section: Belangrijke termen benadrukt (`lokale ondernemers`, `Tilburg en omgeving`, `Google Maps` → vet; `lokale zoekresultaten` → schuin)
   - Mission Section: Kernwaarden en diensten geaccentueerd (`lokale ondernemers`, `lokale business`, `online zichtbaarheid`, `lokale SEO`, `Google Business Profile`, `Tilburg en omgeving` → vet; `ideale klanten`, `prominent verschijnt` → schuin)

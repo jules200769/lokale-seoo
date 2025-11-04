@@ -13,7 +13,7 @@ const OverOnsPage = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl font-bold text-black mb-6">
-              Over <span style={{ color: '#dcc8c2' }}>Lokale SEO & Maps</span> Optimalisatie 013
+              Over <span style={{ color: '#dcc8c2' }}>Lokale SEO & Maps</span> Optimalisatie 
             </h1>
             <p className="text-xl text-gray-600 mb-8">
               Wij zijn gespecialiseerd in het helpen van <strong>lokale ondernemers</strong> in <strong>Tilburg en omgeving</strong> 

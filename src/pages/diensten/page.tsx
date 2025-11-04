@@ -62,7 +62,7 @@ const DienstenPage = () => {
       description: "Een snelle, overzichtelijke website die vertrouwen wekt en klanten naar je toetrekt. Ideaal voor wie net begint en meteen professioneel wil overkomen.",
       oneTimePrice: "€495",
       startPrice: "€595",
-      monthlyPrice: "€120",
+      monthlyPrice: "€195",
       discount: "14%",
       features: [
         "Inclusief alle inbegrepen met het StartPakket als bundel:",
@@ -81,7 +81,7 @@ const DienstenPage = () => {
       description: "Je krijgt een sterkere website die niet alleen mooi oogt, maar ook beter gevonden wordt. Gericht op groei, herkenbaarheid en vertrouwen.",
       oneTimePrice: "€895",
       startPrice: "€1.015",
-      monthlyPrice: "€185",
+      monthlyPrice: "€345",
       discount: "15%",
       features: [
         "Inclusief alle inbegrepen met het GroeiPakket als bundel:",
@@ -99,7 +99,7 @@ const DienstenPage = () => {
       description: "Een op maat gemaakte website die is gebouwd op strategie, conversie en constante verbetering.",
       oneTimePrice: "€1.495",
       startPrice: "€1.645",
-      monthlyPrice: "€275",
+      monthlyPrice: "€525",
       discount: "15%",
       features: [
         "Inclusief alle inbegrepen met het ProPakket als bundel wordt gekocht:",
@@ -173,11 +173,11 @@ const DienstenPage = () => {
                       </div>
                       {pkg.monthlyOptional ? (
                         <div className="text-lg text-gray-600">
-                          <span className="font-semibold">{pkg.monthlyPrice}</span> optioneel per maand
+                          (optioneel) <span className="font-bold italic">{pkg.monthlyPrice}</span> per maand
                         </div>
                       ) : (
                         <div className="text-lg text-gray-600">
-                          <span className="font-semibold">{pkg.monthlyPrice}</span> per maand daarna
+                          vervolgens <span className="font-bold italic">{pkg.monthlyPrice}</span> per maand
                         </div>
                       )}
                     </div>
@@ -233,22 +233,24 @@ const DienstenPage = () => {
                   </div>
                 )}
                 <div className="p-8 flex flex-col h-full">
-                  <div className="text-center mb-8">
-                    <h3 className="text-2xl font-bold text-black mb-2">{pkg.name}</h3>
-                    <p className="text-gray-600 text-sm mb-3 font-semibold">{pkg.target}</p>
-                    <p className="text-gray-600 text-sm mb-6">{pkg.description}</p>
+                  <div className="text-center mb-8 flex flex-col" style={{ minHeight: '280px' }}>
+                    <div className="flex-grow">
+                      <h3 className="text-2xl font-bold text-black mb-2">{pkg.name}</h3>
+                      <p className="text-gray-600 text-sm mb-3 font-semibold">{pkg.target}</p>
+                      <p className="text-gray-600 text-sm mb-6">{pkg.description}</p>
+                    </div>
                     
-                    <div className="mb-6">
+                    <div className="mb-6" style={index === 0 ? { marginTop: '-1.5rem' } : {}}>
                       <div className="text-sm text-gray-500 mb-1">Eenmalig</div>
                       <div className="text-3xl font-bold text-black mb-2">
                         {pkg.oneTimePrice}
                       </div>
                       <div className="text-sm text-gray-500 mb-1">of</div>
                       <div className="text-lg font-semibold text-black mb-1">
-                        {pkg.startPrice} start
+                        Eerste maand {pkg.startPrice}
                       </div>
                       <div className="text-lg text-gray-600">
-                        <span className="font-semibold">{pkg.monthlyPrice}</span> per maand (bundel)
+                        vervolgens <span className="font-bold italic">{pkg.monthlyPrice}</span> per maand
                       </div>
                     </div>
                   </div>
