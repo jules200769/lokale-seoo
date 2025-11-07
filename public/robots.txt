@@ -1,0 +1,12 @@
+# robots.txt voor Lokale SEO Website
+
+# Toestaan dat alle zoekmachines de hele website indexeren
+User-agent: *
+Allow: /
+
+# Crawl-delay (optioneel - niet nodig voor de meeste sites)
+# Crawl-delay: 1
+
+# Sitemap locatie
+Sitemap: https://lokale-seo.net/sitemap.xml
+

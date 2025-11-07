@@ -51,3 +51,4 @@ auto-imports.d.ts
 # Source maps (optional - je kan deze ook committen als je wilt)
 # *.map
 
+.vercel

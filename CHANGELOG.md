@@ -21,6 +21,25 @@ en dit project volgt [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   - Identificatie van belangrijke concepten per sectie (Hero, Mission, Team, Values, Approach, CTA)
   - Strategie bepaald: vet voor belangrijke concepten/diensten/locaties, schuin voor subtiele benadrukking
   - PVA document verwijderd na succesvolle implementatie (alle wijzigingen zijn gedocumenteerd in CHANGELOG.md)
+- **LLMS.txt bestand toegevoegd** 📝
+  - Uitgebreide project documentatie voor AI-assistenten aangemaakt
+  - Bevat volledige projectoverzicht, tech stack, projectstructuur en codeconventies
+  - Documenteert routing, stylingconventies, componentpatronen en development workflow
+  - Helpt AI-assistenten (zoals Cursor) om de codebase sneller en beter te begrijpen
+  - Bevat informatie over pakketten systeem, contactinformatie en belangrijke features
+  - Volgt de LLMS.txt conventie voor betere AI-code assistentie
+- **robots.txt bestand toegevoegd** 🤖
+  - SEO-optimalisatie bestand aangemaakt in `public/robots.txt`
+  - Toestaat dat alle zoekmachines (Google, Bing, etc.) de hele website indexeren
+  - Geoptimaliseerd voor lokale SEO: alle pagina's zijn toegankelijk voor crawlers
+  - Sitemap locatie geconfigureerd: `https://lokale-seo.net/sitemap.xml`
+  - Helpt zoekmachines om de website efficiënt te crawlen en indexeren
+
+### Gewijzigd
+- **Favicon bijgewerkt** 🎨
+  - Favicon referentie aangepast van `favicon.png` naar `logo.png` in `index.html`
+  - Browser tab toont nu hetzelfde logo als in de header voor consistente branding
+  - Logo wordt nu getoond in browser tabs en bookmarks
 
 ### Gefixt
 - **Contactformulier Supabase integratie gerepareerd** ✅

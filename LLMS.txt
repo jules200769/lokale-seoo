@@ -1,0 +1,224 @@
+# Lokale SEO Website - Project Informatie
+
+## Project Overzicht
+
+Dit is een React/TypeScript website voor een lokale SEO en Google Maps optimalisatie dienstverlener. De website presenteert verschillende servicepakketten (Start, Groei, Pro) en website-pakketten voor Nederlandse ondernemers die hun online zichtbaarheid willen verbeteren.
+
+## Tech Stack
+
+### Core Technologies
+- **React 19.1.0** - UI framework met moderne hooks en features
+- **TypeScript 5.8.3** - Type safety en betere developer experience
+- **Vite 7.0.3** - Snelle build tool en development server
+- **React Router DOM 7.6.3** - Client-side routing met lazy loading
+
+### Styling & UI
+- **Tailwind CSS 3.4.17** - Utility-first CSS framework
+- **PostCSS** - CSS processing
+- **RemixIcon** - Icon library (gebruikt via CDN/classes zoals `ri-check-line`)
+
+### Backend & Database
+- **Supabase 2.57.4** - Backend-as-a-Service voor database en authenticatie
+- Environment variables: `VITE_SUPABASE_URL` en `VITE_SUPABASE_ANON_KEY`
+
+### Internationalisatie
+- **i18next 25.3.2** - Internationalisatie framework
+- **react-i18next 15.6.0** - React integratie voor i18next
+- **i18next-browser-languagedetector** - Automatische taal detectie
+- Standaard taal: Engels (en), maar content is in het Nederlands
+
+### Development Tools
+- **unplugin-auto-import** - Automatische imports voor React hooks en React Router
+- **ESLint** - Code linting
+- **@vitejs/plugin-react-swc** - Snelle React transformatie met SWC
+
+### Overige Dependencies
+- **@stripe/react-stripe-js** - Stripe integratie (voor toekomstige betalingen)
+- **@vercel/speed-insights** - Performance monitoring
+- **recharts** - Data visualisatie (grafieken)
+- **firebase** - Mogelijk voor analytics of andere features
+
+## Project Structuur
+
+```
+src/
+├── components/
+│   └── feature/
+│       ├── Header.tsx          # Navigatie header component
+│       └── Footer.tsx           # Footer component
+├── pages/
+│   ├── home/
+│   │   ├── page.tsx            # Homepage
+│   │   └── components/         # Homepage specifieke componenten
+│   │       ├── HeroSection.tsx
+│   │       ├── ProblemsSection.tsx
+│   │       ├── WhyChooseSection.tsx
+│   │       ├── ServicesPreview.tsx
+│   │       └── CTASection.tsx
+│   ├── diensten/
+│   │   └── page.tsx            # Diensten/pakketten pagina
+│   ├── over-ons/
+│   │   └── page.tsx            # Over ons pagina
+│   ├── contact/
+│   │   └── page.tsx            # Contact pagina
+│   └── NotFound.tsx            # 404 pagina
+├── router/
+│   ├── config.tsx              # Route configuratie met lazy loading
+│   └── index.ts                # Router export
+├── lib/
+│   └── supabase.ts             # Supabase client configuratie
+├── i18n/
+│   ├── index.ts                # i18next initialisatie
+│   └── local/
+│       └── index.ts            # Vertalingen
+├── App.tsx                     # Root component met BrowserRouter
+├── main.tsx                    # Entry point
+└── index.css                   # Global styles
+
+public/
+└── images/                     # Statische afbeeldingen
+    ├── logo.png
+    ├── hero-bg.jpg
+    ├── cta-bg.jpg
+    └── ...
+
+out/                            # Build output (niet in Git)
+```
+
+## Belangrijke Bestanden
+
+### Configuratie
+- `vite.config.ts` - Vite configuratie met auto-import plugin en path aliases
+- `tailwind.config.ts` - Tailwind CSS configuratie
+- `tsconfig.json` - TypeScript configuratie
+- `package.json` - Dependencies en scripts
+- `vercel.json` - Vercel deployment configuratie
+
+### Database
+- `SUPABASE_SETUP.md` - Supabase setup instructies
+- `supabase-schema.sql` - Database schema
+- `supabase-migration.sql` - Database migraties
+
+## Routing
+
+Routes zijn gedefinieerd in `src/router/config.tsx`:
+- `/` - Homepage
+- `/diensten` - Diensten/pakketten pagina
+- `/over-ons` - Over ons pagina
+- `/contact` - Contact pagina
+- `*` - 404 Not Found pagina
+
+Alle routes gebruiken lazy loading voor betere performance.
+
+## Styling Conventies
+
+### Kleuren
+- Primaire accent kleur: `#dcc8c2` (beige/roze tint)
+- Achtergrond: Wit (`bg-white`) en lichtgrijs (`#f8f8f8`)
+- Tekst: Zwart (`text-black`) en grijstinten (`text-gray-600`, `text-gray-700`)
+- Hover states: Donkergrijs (`hover:bg-gray-800`)
+
+### Tailwind Classes
+- Gebruik van utility classes voor styling
+- Responsive design met `md:`, `lg:` breakpoints
+- Flexbox en Grid voor layouts
+- Shadow utilities voor diepte (`shadow-sm`, `shadow-lg`, `shadow-xl`)
+
+### Inline Styles
+- Soms gebruikt voor dynamische kleuren (bijv. `style={{ backgroundColor: '#dcc8c2' }}`)
+- Vooral voor component-specifieke styling die niet in Tailwind config staat
+
+## Component Patronen
+
+### Page Components
+- Elke pagina heeft een eigen folder in `src/pages/`
+- Pagina componenten importeren `Header` en `Footer`
+- Gebruik van section-based layout met semantische HTML
+
+### Feature Components
+- Herbruikbare componenten in `src/components/feature/`
+- Homepage specifieke componenten in `src/pages/home/components/`
+
+### Data Structure
+- Pakketten data wordt lokaal gedefinieerd in componenten (bijv. `packages` array in `DienstenPage`)
+- Geen externe state management library (Redux/Zustand) - gebruikt React hooks
+
+## Development Workflow
+
+### Scripts
+- `npm run dev` - Start development server op poort 3000
+- `npm run build` - Build voor productie (output in `out/` folder)
+- `npm run preview` - Preview productie build lokaal
+
+### Environment Variables
+Vereist in `.env.local`:
+- `VITE_SUPABASE_URL` - Supabase project URL
+- `VITE_SUPABASE_ANON_KEY` - Supabase anonymous key
+
+### Auto-imports
+Het project gebruikt `unplugin-auto-import` voor automatische imports van:
+- React hooks (useState, useEffect, etc.)
+- React Router hooks (useNavigate, useLocation, etc.)
+- React i18next hooks (useTranslation, Trans)
+
+Type definitions worden gegenereerd in `auto-imports.d.ts`.
+
+## Deployment
+
+- **Platform**: Vercel
+- **Build Command**: `npm run build`
+- **Output Directory**: `out/`
+- **Base Path**: Configureerbaar via `BASE_PATH` environment variable
+
+## Belangrijke Features
+
+### Pakketten Systeem
+De website toont twee soorten pakketten:
+1. **Lokale SEO Pakketten**: Start (€195), Groei (€295), Pro (€450)
+2. **Website Pakketten**: Start Website (€495), Groei Website (€895), Pro Website (€1.495)
+
+Elk pakket heeft:
+- Prijsinformatie (eenmalig en maandelijks)
+- Doelgroep beschrijving
+- Feature lijst
+- Kleur codering (blue, orange, purple)
+
+### Contact Informatie
+- Telefoon: 085 250 28 34
+- Contact formulier op `/contact` pagina
+
+## Code Conventies
+
+### Naming
+- Componenten: PascalCase (bijv. `DienstenPage`, `HeroSection`)
+- Bestanden: PascalCase voor componenten, lowercase voor configuratie
+- Variabelen: camelCase
+
+### TypeScript
+- Strikte type checking
+- Type definitions voor alle componenten
+- Gebruik van TypeScript interfaces waar nodig
+
+### React Patterns
+- Function components met hooks
+- Lazy loading voor route components
+- Conditional rendering met ternary operators en `&&`
+- Event handlers met inline arrow functions of separate functions
+
+## Toekomstige Uitbreidingen
+
+Mogelijke features gebaseerd op dependencies:
+- Stripe integratie voor online betalingen
+- Firebase analytics
+- Recharts voor data visualisatie/rapportage
+- Uitgebreidere i18n support (momenteel alleen Engels als fallback, maar content is Nederlands)
+
+## Notities voor LLMs
+
+- Alle content is in het Nederlands, ook al is i18next geconfigureerd
+- De website is gericht op Nederlandse ondernemers
+- Focus op lokale SEO en Google Business Profile optimalisatie
+- Design is minimalistisch met beige accent kleuren
+- Alle pakketten zijn maandelijks opzegbaar (geen contracten)
+- Responsive design is belangrijk - gebruik Tailwind responsive classes
+
