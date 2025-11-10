@@ -8,6 +8,22 @@ en dit project volgt [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [Unreleased]
 
 ### Toegevoegd
+- **Chatbase.co AI chat widget geïmplementeerd** 💬
+  - Chatbase widget script toegevoegd aan `index.html` in de `<head>` sectie
+  - Widget ID: `FQnCprWQgCcSZyWwpwISm`
+  - Widget laadt automatisch bij pagina load voor AI-powered klantensupport
+  - Nieuwe utility module aangemaakt (`src/lib/chatbase.ts`) voor toekomstige user identification
+  - Utility functies: `identifyUser()` voor gebruikersidentificatie met JWT tokens, `isChatbaseReady()` voor status check
+  - TypeScript type definitions toegevoegd voor `window.chatbase` interface
+  - Documentatie toegevoegd in utility module voor server-side JWT token generatie
+  - Secret key beschikbaar voor server-side implementatie: `rrea2oodzub4ng6zc2wcmku1t2rezily`
+  - Widget is direct beschikbaar op alle pagina's voor bezoekers
+  - Voor user identification: implementeer server-side JWT token generatie met `jsonwebtoken` package en Chatbase secret key
+  - Client-side kan `identifyUser(token)` worden aangeroepen na het ontvangen van een JWT token van de server
+- **Oude WhatsApp chat knop verwijderd** 🗑️
+  - WhatsApp chat widget verwijderd uit `index.html` (rechts onderin)
+  - Chatbase widget vervangt nu de oude WhatsApp knop voor betere AI-powered klantensupport
+  - Bezoekers kunnen nu gebruik maken van de Chatbase AI chat widget in plaats van directe WhatsApp link
 - Plan van Aanpak (PVA) gemaakt voor typografie verbetering homepagina
   - Gedetailleerde strategie voor het benadrukken van belangrijke woorden met vet en schuin op homepagina
   - PVA document aangemaakt (`PVA_HOME_TYPOGRAPHY.md`) met volledige analyse van alle 5 componenten

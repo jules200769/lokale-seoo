@@ -43,6 +43,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Remix Icon -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- Chatbase Widget -->
+    <script>
+      (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="FQnCprWQgCcSZyWwpwISm";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -52,14 +57,5 @@
     
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    
-    <!-- Chat Widget vervangen door WhatsApp link -->
-    <div id="whatsapp-chat" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
-      <a href="https://wa.me/31852502834?text=Hallo! Ik heb interesse in jullie lokale SEO diensten." 
-         target="_blank" 
-         style="display: inline-block; background-color: #dcc8c2; color: white; width: 60px; height: 60px; border-radius: 50%; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.15); font-size: 24px; display: flex; align-items: center; justify-content: center; transition: transform 0.2s ease;">
-        💬
-      </a>
-    </div>
   </body>
 </html>
